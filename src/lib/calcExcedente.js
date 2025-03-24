@@ -1,4 +1,4 @@
-function calcExcedente(excedente, horaBaseAluno, periodo = ""){
+function calcExcedente(excedente = 0, horaBaseAluno, periodo = ""){
 
     let result = 0
 

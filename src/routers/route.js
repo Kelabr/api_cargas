@@ -10,14 +10,16 @@ export default async function router(app, options){
     })
 
     app.post("/register", async(req, res) => {
-        const {categoria, suplementar, ampliacao, excedente} = req.body
+        const {categoria, suplementar, ampliacao, excedente, cuidar} = req.body
 
         const horasAlunoMes = calc(categoria, suplementar, ampliacao)
 
         const comExcedente = calcExcedente(excedente, horasAlunoMes)
+
+        const result = comExcedente + cuidar
         
 
-            return res.send({totalSemanal:comExcedente, totalMensal:comExcedente * 5})
+            return res.send({totalSemanal:result, totalMensal:result * 5})
         })
 
 }
